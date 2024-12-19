@@ -76,3 +76,17 @@ function addProductMenu() {
         mainMenu();
     });
 }
+
+// Menu pour lister tous les produits
+function listProductsMenu() {
+    console.log("\n=== Liste des Produits ===\n");
+    const products = inventory.listProducts();
+
+    if (products.length === 0) {
+        console.log("Aucun produit trouvé.");
+    } else {
+        console.table(products);
+    }
+
+    mainMenu();
+}
