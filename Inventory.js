@@ -39,6 +39,17 @@ class Inventory {
         this.saveProducts();
     }
 
+    listProducts() {
+        return this.products.map(product => ({
+            id: product.id,
+            name: product.name,
+            description: product.description,
+            quantity: product.quantity,
+            price: product.price,
+            total: product.getTotalPrice()
+        }));
+    }
+
 
 
 
