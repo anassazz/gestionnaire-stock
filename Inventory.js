@@ -58,6 +58,13 @@ class Inventory {
         this.saveProducts();
     }
 
+    deleteProduct(id) {
+        const index = this.products.findIndex(p => p.id === id);
+        if (index === -1) throw new Error("Produit introuvable");
+        this.products.splice(index, 1);
+        this.saveProducts();
+    }
+
 
 
 
