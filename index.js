@@ -1,3 +1,10 @@
+const prompt = require('prompt');
+
+
+// Configuration de prompt
+prompt.start();
+prompt.message = ''; // Supprime le préfixe par défaut
+
 // Fonction pour afficher le menu principal
 function mainMenu() {
     console.log(`\n=== Gestionnaire de Stock ===\n`);
