@@ -118,3 +118,31 @@ function updateProductMenu() {
         mainMenu();
     });
 }
+
+// Menu pour supprimer un produit
+function deleteProductMenu() {
+    console.log("\n=== Supprimer un Produit ===\n");
+    prompt.get({
+        name: 'id',
+        description: 'ID du produit',
+        type: 'integer',
+        required: true
+    }, (err, result) => {
+        if (err) {
+            console.error("Erreur :", err.message);
+            return mainMenu();
+        }
+
+        try {
+            inventory.deleteProduct(result.id);
+            console.log("Produit supprimé avec succès !");
+        } catch (error) {
+            console.error("Erreur :", error.message);
+        }
+
+        mainMenu();
+    });
+}
+
+// Démarrage du programme
+mainMenu();
