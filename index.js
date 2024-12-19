@@ -46,3 +46,33 @@ function mainMenu() {
         }
     });
 }
+
+// Menu pour ajouter un produit
+function addProductMenu() {
+    console.log("\n=== Ajouter un Produit ===\n");
+    prompt.get([
+        { name: 'name', description: 'Nom du produit', required: true },
+        { name: 'description', description: 'Description du produit', required: true },
+        { name: 'quantity', description: 'Quantité', type: 'integer', required: true, minimum: 0 },
+        { name: 'price', description: 'Prix', type: 'number', required: true, minimum: 0 }
+    ], (err, result) => {
+        if (err) {
+            console.error("Erreur :", err.message);
+            return mainMenu();
+        }
+
+        try {
+            inventory.addProduct(
+                result.name,
+                result.description,
+                result.quantity,
+                result.price
+            );
+            console.log("Produit ajouté avec succès !");
+        } catch (error) {
+            console.error("Erreur :", error.message);
+        }
+
+        mainMenu();
+    });
+}
