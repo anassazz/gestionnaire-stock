@@ -6,7 +6,7 @@ class Inventory {
         this.filePath = filePath;
         this.products = this.loadProducts();
     }
-    
+
     loadProducts() {
         try {
             if (fs.existsSync(this.filePath)) {
@@ -21,6 +21,14 @@ class Inventory {
         } catch (error) {
             console.error("Erreur lors de la lecture du fichier JSON :", error.message);
             return [];
+        }
+    }
+
+    saveProducts() {
+        try {
+            fs.writeFileSync(this.filePath, JSON.stringify(this.products, null, 2));
+        } catch (error) {
+            console.error("Erreur lors de l'écriture du fichier JSON :", error.message);
         }
     }
 
