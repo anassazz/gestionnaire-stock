@@ -50,6 +50,14 @@ class Inventory {
         }));
     }
 
+    updateProduct(id, quantity, price) {
+        const product = this.products.find(p => p.id === id);
+        if (!product) throw new Error("Produit introuvable");
+        if (quantity !== undefined) product.quantity = quantity;
+        if (price !== undefined) product.price = price;
+        this.saveProducts();
+    }
+
 
 
 
