@@ -90,3 +90,31 @@ function listProductsMenu() {
 
     mainMenu();
 }
+
+// Menu pour mettre à jour un produit
+function updateProductMenu() {
+    console.log("\n=== Mettre à Jour un Produit ===\n");
+    prompt.get([
+        { name: 'id', description: 'ID du produit', type: 'integer', required: true },
+        { name: 'quantity', description: 'Nouvelle quantité (laisser vide pour ignorer)', type: 'integer', required: false },
+        { name: 'price', description: 'Nouveau prix (laisser vide pour ignorer)', type: 'number', required: false }
+    ], (err, result) => {
+        if (err) {
+            console.error("Erreur :", err.message);
+            return mainMenu();
+        }
+
+        try {
+            inventory.updateProduct(
+                result.id,
+                result.quantity !== undefined ? result.quantity : undefined,
+                result.price !== undefined ? result.price : undefined
+            );
+            console.log("Produit mis à jour avec succès !");
+        } catch (error) {
+            console.error("Erreur :", error.message);
+        }
+
+        mainMenu();
+    });
+}
