@@ -65,10 +65,6 @@ class Inventory {
         this.saveProducts();
     }
 
-
-
-
-
-
-
 }
+
+module.exports = Inventory;
