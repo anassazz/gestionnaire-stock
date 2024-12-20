@@ -1,5 +1,5 @@
 const prompt = require('prompt');
-
+const Inventory = require('./Inventory');
 
 // Configuration de prompt
 prompt.start();
