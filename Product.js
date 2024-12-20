@@ -6,6 +6,8 @@ class Product {
         this.quantity = quantity;
         this.price = price;
     }
-
+    getTotalPrice() {
+        return this.quantity * this.price;
+    }
 
 }
