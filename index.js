@@ -1,5 +1,6 @@
 const prompt = require('prompt');
 const Inventory = require('./Inventory');
+const inventory = new Inventory('data.json');
 
 // Configuration de prompt
 prompt.start();
