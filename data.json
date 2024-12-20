@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "fil de soudure 1.0mm",
+    "description": "Bobine Soudure Electronique",
+    "quantity": 100,
+    "price": 250
+  },
+  {
+    "id": 2,
+    "name": "Fil de soudage 2.0mm",
+    "description": "Tiges de brasage",
+    "quantity": 150,
+    "price": 200
+  },
+  {
+    "id": 3,
+    "name": "Tube galvanisé",
+    "description": "Tube en acier galvanisé à chaud",
+    "quantity": 60,
+    "price": 300
+  },
+  {
+    "id": 4,
+    "name": "Pistolets à souder",
+    "description": "Pistolet à bobine pour soudage",
+    "quantity": 5,
+    "price": 600
+  },
+  {
+    "id": 5,
+    "name": "Meuleuse",
+    "description": "Meuleuse GWS 700 Professional - Bosch",
+    "quantity": 6,
+    "price": 400
+  }
+]
